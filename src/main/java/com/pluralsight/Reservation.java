@@ -5,6 +5,12 @@ public class Reservation {
     private int numberOfNights;
     private boolean weekend;
 
+    public Reservation(String roomType, int numberOfNights, boolean weekend) {
+        this.roomType = roomType;
+        this.numberOfNights = numberOfNights;
+        this.weekend = weekend;
+    }
+
     private double getPriceInner(String roomType) {
         return switch (roomType.toLowerCase()) {
             case "king" -> 139.00;

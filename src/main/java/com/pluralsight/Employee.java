@@ -7,6 +7,14 @@ public class Employee {
     private double payRate;
     private double hoursWorked;
 
+    public Employee(String employeeId, String name, String department, double payRate, double hoursWorked) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.department = department;
+        this.payRate = payRate;
+        this.hoursWorked = hoursWorked;
+    }
+
     public double getRegularHours() {
         if (hoursWorked < 40) {
             return hoursWorked;

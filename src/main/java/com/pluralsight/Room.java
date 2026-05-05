@@ -6,6 +6,13 @@ public class Room {
     private boolean occupied;
     private boolean dirty;
 
+    public Room(int numberOfBeds, double price, boolean occupied, boolean dirty) {
+        this.numberOfBeds = numberOfBeds;
+        this.price = price;
+        this.occupied = occupied;
+        this.dirty = dirty;
+    }
+
     public int getNumberOfBeds() {
         return numberOfBeds;
     }

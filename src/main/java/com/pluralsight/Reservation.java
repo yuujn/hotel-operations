@@ -5,11 +5,20 @@ public class Reservation {
     private int numberOfNights;
     private boolean weekend;
 
+    private double getPriceInner(String roomType) {
+        return switch (roomType.toLowerCase()) {
+            case "king" -> 139.00;
+            case "double" -> 124.00;
+            default -> throw new RuntimeException("invalid roomType");
+        };
+    }
+
     public String getRoomType() {
         return roomType;
     }
 
     public void setRoomType(String roomType) {
+        getPriceInner(roomType);
         this.roomType = roomType;
     }
 
@@ -30,11 +39,7 @@ public class Reservation {
     }
 
     public double getPrice() {
-        double price = switch (roomType.toLowerCase()) {
-            case "king" -> 139.00;
-            case "double" -> 124.00;
-            default -> throw new RuntimeException("invalid roomType");
-        };
+        double price = getPriceInner(roomType);
 
         if (weekend) {
             price *= 1.1;

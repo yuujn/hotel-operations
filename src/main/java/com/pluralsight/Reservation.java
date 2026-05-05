@@ -25,7 +25,7 @@ public class Reservation {
         return weekend;
     }
 
-    public void setWeekend(boolean weekend) {
+    public void setIsWeekend(boolean weekend) {
         this.weekend = weekend;
     }
 

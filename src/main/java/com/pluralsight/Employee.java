@@ -6,7 +6,6 @@ public class Employee {
     private String department;
     private double payRate;
     private double hoursWorked;
-    private int startTime;
 
     public Employee(String employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
@@ -36,10 +35,7 @@ public class Employee {
         return normalPay + overtimePay;
     }
 
-    public void punchIn(int time) {
-        startTime = time;
-    }
-    public void punchOut(int time) {
-        hoursWorked += time - startTime;
+    public void punchTimeCard(int startTime, int endTime) {
+        hoursWorked += endTime - startTime;
     }
 }
